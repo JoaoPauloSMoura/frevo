@@ -1,0 +1,18 @@
+# Reunião inventada para testar a transcrição e a separação de vozes. Cada linha: quem | o que fala.
+# "Você" vai para a gravação do seu microfone; os outros, para a gravação da chamada.
+Você | Bom dia, pessoal. Vamos começar a reunião de planejamento da semana.
+Você | Bruno, como ficou a entrega do aplicativo novo?
+Bruno | Bom dia. A entrega ficou pronta ontem à noite. Faltou só revisar a tela de pagamentos, que eu termino hoje à tarde.
+Você | Ótimo. E os testes com os clientes?
+Bruno | Marcamos três conversas para quinta-feira. Se der tudo certo, liberamos para todo mundo na semana que vem.
+Você | Paulo, você conseguiu falar com o fornecedor?
+Paulo | Consegui, sim. Eles prometeram mandar as peças até sexta, mas o preço subiu um pouco por causa do frete.
+Pedro | Quanto subiu? Precisamos saber antes de fechar o orçamento do mês.
+Paulo | Mais ou menos oito por cento. Eu mando a planilha atualizada depois da reunião.
+Você | Pedro, isso cabe no orçamento ou precisamos cortar alguma coisa?
+Pedro | Cabe, mas fica apertado. Eu sugiro adiar a compra dos monitores para o mês que vem.
+Bruno | Por mim, tudo bem. A equipe consegue trabalhar com o que temos por enquanto.
+Você | Então está combinado. O Bruno termina a tela de pagamentos, o Paulo manda a planilha e o Pedro ajusta o orçamento.
+Paulo | Só mais uma coisa: alguém pode cobrir o meu horário de atendimento na quarta-feira?
+Pedro | Eu cubro. Na quarta de manhã eu estou livre.
+Você | Perfeito. Obrigado a todos, até amanhã.

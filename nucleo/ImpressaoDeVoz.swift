@@ -1,4 +1,6 @@
-import Accelerate
+#if canImport(Accelerate)
+import Accelerate // no Windows, as mesmas contas estão em Contas.swift
+#endif
 import Foundation
 
 /// Impressão de voz pelo sherpa-onnx (Apache-2.0), com o ERes2NetV2 do 3D-Speaker (Apache-2.0).

@@ -1,9 +1,12 @@
+#if canImport(AVFoundation)
 import AVFoundation
+#endif
 import Foundation
 
 /// Lê um arquivo de áudio e devolve mono 16 kHz (o que o Whisper e a impressão de voz esperam).
 enum Audio16k {
     static func ler(_ url: URL) throws -> [Float] {
+        #if canImport(AVFoundation)
         let arquivo = try AVAudioFile(forReading: url)
         let fmt = arquivo.processingFormat
         let buf = AVAudioPCMBuffer(pcmFormat: fmt, frameCapacity: AVAudioFrameCount(max(arquivo.length, 1)))!
@@ -29,6 +32,9 @@ enum Audio16k {
         }
         if let erro { throw erro }
         return Array(UnsafeBufferPointer(start: saida.floatChannelData![0], count: Int(saida.frameLength)))
+        #else
+        return try Wav.ler16k(url) // Windows: sem AVFoundation, só WAV
+        #endif
     }
 }
 

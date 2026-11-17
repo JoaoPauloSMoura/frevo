@@ -1,0 +1,89 @@
+# Testa o núcleo do Frevo no Windows: compila a transcrição com o mesmo código em Swift do Mac e transcreve uma
+# reunião inventada, com vozes sintéticas (ferramentas/conversa-de-teste). Nada de gravação de gente de verdade.
+name: Núcleo no Windows
+
+on:
+  push:
+    branches: ['windows/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  conversa:
+    name: Conversa de teste
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: pip install piper-tts==1.8.0
+      - uses: actions/cache@v6
+        with:
+          path: vozes-piper
+          key: vozes-piper-1
+      - run: python ferramentas/conversa-de-teste/gerar.py --saida conversa --vozes vozes-piper
+      - uses: actions/upload-artifact@v7
+        with:
+          name: conversa
+          path: conversa/
+
+  windows:
+    name: Transcrição no Windows
+    needs: conversa
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v7
+      - uses: compnerd/gha-setup-swift@57fe462cd3c7b05ae8fcff79b00719312e305257
+        with:
+          swift-version: swift-6.4.2-release
+          swift-build: 6.4.2-RELEASE
+      - run: swiftc --version
+
+      - uses: actions/cache@v6
+        with:
+          path: |
+            third_party/whisper-win
+            third_party/sherpa-onnx-win
+            third_party/modelos
+          key: dependencias-windows-${{ hashFiles('scripts/windows/baixar-dependencias.ps1') }}
+      - run: scripts\windows\baixar-dependencias.ps1
+
+      - uses: actions/cache@v6
+        with:
+          path: modelo-whisper
+          key: whisper-large-v3-turbo
+      - name: Modelo do Whisper (1,6 GB, baixado uma vez)
+        run: |
+          if (-not (Test-Path modelo-whisper\ggml-large-v3-turbo.bin)) {
+            New-Item -ItemType Directory -Force modelo-whisper | Out-Null
+            curl.exe -sSfL -o modelo-whisper\ggml-large-v3-turbo.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin
+          }
+
+      - run: scripts\windows\compilar-transcrever.ps1
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: conversa
+          path: conversa
+      - name: Transcreve a conversa
+        env:
+          FREVO_WHISPER: ${{ github.workspace }}\modelo-whisper\ggml-large-v3-turbo.bin
+        run: |
+          [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
+          New-Item -ItemType Directory -Force resultado | Out-Null
+          build\transcrever.exe --voce conversa\voce.wav --outros conversa\outros.wav --titulo "Conversa de teste" `
+            --livro "$env:RUNNER_TEMP\vozes.json" --falas resultado\falas.json | Tee-Object -FilePath resultado\saida.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Compara com o gabarito
+        run: python ferramentas/conversa-de-teste/comparar.py conversa/gabarito.json windows=resultado/falas.json
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: resultado-windows
+          path: resultado/

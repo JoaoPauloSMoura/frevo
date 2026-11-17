@@ -21,6 +21,7 @@ enum Modelos {
     static var destinoWhisper: URL { pastaApp.appendingPathComponent("modelos/\(nomeWhisper)") }
 
     static func whisper() -> String? {
+        if let p = ProcessInfo.processInfo.environment["FREVO_WHISPER"] { return p } // testes e outras máquinas
         let home = FileManager.default.homeDirectoryForCurrentUser
         let candidatos = [destinoWhisper, home.appendingPathComponent(".cache/digestor/models/\(nomeWhisper)")]
         return candidatos.first { FileManager.default.fileExists(atPath: $0.path) }?.path
@@ -33,6 +34,9 @@ enum Modelos {
     static func rotulosDeSons() -> String { embutido(nomeRotulosDeSons) }
 
     private static func embutido(_ nome: String) -> String {
+        if let pasta = ProcessInfo.processInfo.environment["FREVO_MODELOS"] { // testes e outras máquinas
+            return URL(fileURLWithPath: pasta).appendingPathComponent(nome).path
+        }
         let exe = URL(fileURLWithPath: CommandLine.arguments[0]).resolvingSymlinksInPath().deletingLastPathComponent()
         let candidatos = [
             exe.appendingPathComponent("../Resources/\(nome)"),
