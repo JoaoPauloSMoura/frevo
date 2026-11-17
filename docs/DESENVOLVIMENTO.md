@@ -77,6 +77,10 @@ build/transcrever --separar outros.wav turnos.json [--passo 0.25]          # só
 
 Não rode `build/frevo` com o app aberto: os dois escreveriam no Frevo e a voz sairia dobrada.
 
+As imagens do README (`docs/imagens`) saem das próprias telas do app, com dados inventados. Depois de mudar o painel, a ilha ou a janela "Quem falou?", rode `scripts/gerar-imagens-da-doc.sh`:
+- `ferramentas/telas-da-doc` desenha as telas numa janela fora da tela;
+- `ferramentas/foto-html` monta as composições de `docs/imagens/fonte/*.html` e fotografa cada uma.
+
 A bancada de ruído (`teste-ruido/comparar.sh audio.m4a`) roda cada modelo num áudio e abre uma página para comparar ouvindo. Ela tem um ambiente Python próprio (`teste-ruido/.venv`) e baixa os modelos que compara.
 
 ## Como funciona, com as medições

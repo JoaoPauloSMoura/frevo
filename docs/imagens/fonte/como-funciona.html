@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="estilo.css"><style>
+body { background: #0E0C13; }
+.passos { position: absolute; inset: 0; display: flex; gap: 28px; padding: 56px 56px; }
+.passo { flex: 1; background: rgba(255,255,255,.045); border-radius: 22px; padding: 30px 30px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
+  display: flex; flex-direction: column; }
+.passo .legenda { margin-top: 8px; margin-bottom: 22px; }
+.palco { flex: 1; border-radius: 14px; background: #131118; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; }
+.lista { width: 82%; border-radius: 10px; background: #232129; box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.08); padding: 6px; font-size: 15px; }
+.lista .rot { font-size: 12px; color: rgba(255,255,255,.5); padding: 8px 10px 6px; }
+.lista div.op { padding: 9px 10px; border-radius: 6px; display: flex; justify-content: space-between; color: rgba(255,255,255,.88); }
+.lista div.sim { background: #2E6BF0; color: #fff; font-weight: 600; }
+.onda { display: flex; align-items: center; gap: 5px; height: 120px; }
+.onda i { display: block; width: 5px; border-radius: 3px; }
+.seta { color: rgba(255,255,255,.5); font-size: 22px; margin: 0 10px; }
+.doc { width: 86%; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.85); }
+.doc p { margin-bottom: 12px; } .doc b { color: #fff; } .doc .h { color: rgba(255,255,255,.45); font-weight: 400; }
+</style></head><body>
+<div class="passos">
+  <div class="passo"><div class="num">1</div><div class="titulo">Escolha o “Frevo”</div>
+    <p class="legenda">Como microfone no Meet, Zoom, Teams ou Slack. Uma vez só: o app de chamada lembra.</p>
+    <div class="palco"><div class="lista"><div class="rot">Microfone</div>
+      <div class="op">Microfone do MacBook Pro</div><div class="op">HyperX Cloud III</div><div class="op sim">Frevo <span>✓</span></div></div></div></div>
+  <div class="passo"><div class="num">2</div><div class="titulo">Ele limpa a sua voz</div>
+    <p class="legenda">Tira o ruído de fundo e o eco do alto-falante, a cada 10 ms, sem atraso que se perceba.</p>
+    <div class="palco"><div class="onda" id="onda"></div></div></div>
+  <div class="passo"><div class="num">3</div><div class="titulo">A chamada vira texto</div>
+    <p class="legenda">Se você quiser: no fim, a transcrição com o nome de cada pessoa, salva em Markdown.</p>
+    <div class="palco"><div class="doc">
+      <p><b>Gabriela Rocha</b> <span class="h">· 00:12</span><br>A ideia hoje é fechar o escopo da sprint.</p>
+      <p><b>Marina Costa</b> <span class="h">· 00:31</span><br>Eu pego o back, mas preciso do contrato da API.</p>
+      <p><b>Você</b> <span class="h">· 00:47</span><br>Fecho o contrato hoje e mando no canal.</p></div></div></div>
+</div>
+<script>
+const o = document.getElementById('onda');
+const alt = [34,62,48,80,40,70,58,88,46,66,52,74,38];
+alt.forEach((a,i) => { const e = document.createElement('i'); e.style.height = (a + (i%3)*6) + 'px'; e.style.background = 'rgba(255,255,255,.38)'; o.appendChild(e); });
+const s = document.createElement('span'); s.className = 'seta'; s.textContent = '→'; o.appendChild(s);
+[30,70,20,6,6,58,92,40,6,6,74,50,8].forEach(a => { const e = document.createElement('i'); e.style.height = Math.max(5,a) + 'px'; e.style.background = a > 8 ? '#5CCAA6' : 'rgba(92,202,166,.55)'; o.appendChild(e); });
+</script>
+</body></html>

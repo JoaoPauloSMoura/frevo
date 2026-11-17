@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="estilo.css"><link rel="stylesheet" href="janela.css"><style>
+body { background: radial-gradient(110% 120% at 0% 100%, #3A1F2A 0%, #120F18 60%); }
+.janela { left: 60px; top: 44px; right: 60px; bottom: 44px; background: rgba(24,22,30,.97); }
+.barra { background: #26232E; color: rgba(255,255,255,.7); font-weight: 500; }
+pre { padding: 18px 22px; font: 13.4px/1.55 "SF Mono", Menlo, monospace; color: #E7E3EE; white-space: pre-wrap; }
+.p { color: #8BD5B6; } .c { color: #fff; font-weight: 600; } .s { color: #fff; font-weight: 700; } .d { color: rgba(231,227,238,.55); } .ok { color: #8BD5B6; font-weight: 700; }
+</style></head><body>
+<div class="janela"><div class="barra"><div class="luzes"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><div class="t">frevo — zsh</div></div>
+<pre><span class="p">~ %</span> <span class="c">git clone https://github.com/JoaoPauloSMoura/frevo.git && cd frevo && scripts/instalar.sh</span>
+
+<span class="s">==> Conferindo o Mac</span>
+macOS 15.5, Apple Silicon
+
+<span class="s">==> Ferramentas de compilação</span>
+rust, whisper-cpp, meson e ninja já instalados
+
+<span class="s">==> Bibliotecas e modelos (só na primeira vez)</span>
+DeepFilterNet @ d375b2d
+libASPL @ 633e0f7
+sherpa-onnx @ v2.0.1
+modelos de voz e de sons em third_party/modelos
+
+<span class="s">==> Compilando (a primeira vez leva uns 10 minutos)</span>
+motor: build/libdf.a e build/recursos/DeepFilterNet3_onnx.tar.gz
+eco: build/libeco.a (5,0M)
+certificado: "Frevo (assinatura local)" criado no Chaveiro (vale 10 anos, só neste Mac)
+driver: build/Frevo.driver
+assinado com o certificado local do Frevo
+app: build/Frevo.app (v0.1.0)
+
+<span class="s">==> Instalando o driver (pede a senha do Mac; o som corta por 1 ou 2 segundos)</span>
+Password:
+Driver instalado em /Library/Audio/Plug-Ins/HAL/Frevo.driver.
+
+<span class="s">==> Instalando o app</span>
+Frevo instalado em Aplicativos e aberto. Procure a sombrinha na barra de menu.
+
+<span class="ok">Pronto!</span> A sombrinha do Frevo está na barra de menu.</pre></div></body></html>

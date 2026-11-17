@@ -1,0 +1,4 @@
+.janela { position: absolute; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.1); }
+.barra { height: 38px; display: flex; align-items: center; padding: 0 14px; position: relative; font-size: 13px; font-weight: 600; }
+.barra .luzes { display: flex; gap: 8px; } .barra .luzes i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.barra .t { position: absolute; left: 0; right: 0; text-align: center; pointer-events: none; }

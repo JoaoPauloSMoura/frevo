@@ -814,7 +814,7 @@ final class Transcritor {
         let semNome = vozes.indices.filter { vozes[$0].nome == nil && vozes[$0].sugestao == nil && (vozes[$0].segundos ?? 0) >= Sessao.segundosParaNomear }
         if semVoz.count == 1, semNome.count == 1 {
             vozes[semNome[0]].sugestao = semVoz[0]
-            vozes[semNome[0]].motivo = "único convidado que ainda não tinha voz"
+            vozes[semNome[0]].motivo = "é o único convidado que ainda não tinha voz"
         }
     }
 
