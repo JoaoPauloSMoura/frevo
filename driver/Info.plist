@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AudioServerPlugIn_MachServices</key>
+	<array/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>pt-BR</string>
+	<key>CFBundleExecutable</key>
+	<string>Frevo</string>
+	<key>CFBundleIdentifier</key>
+	<string>io.github.joaopaulosmoura.frevo.driver</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Frevo</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>0.1.0</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>6E1F3B52-8C4A-4D7E-9B21-5A0C9D2E7F14</key>
+		<string>FrevoEntryPoint</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>443ABAB8-E7B3-491A-B985-BEB9187030DB</key>
+		<array>
+			<string>6E1F3B52-8C4A-4D7E-9B21-5A0C9D2E7F14</string>
+		</array>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2026 João Paulo S. Moura. Licença MIT.</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
+	<key>sandboxSafe</key>
+	<true/>
+</dict>
+</plist>

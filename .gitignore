@@ -1,0 +1,17 @@
+build/
+third_party/
+.DS_Store
+
+# bancada de testes: ambiente Python, modelos baixados e áudios gerados
+teste-ruido/.venv/
+teste-ruido/modelos/
+teste-ruido/bin/
+teste-ruido/audios/
+teste-ruido/resultados/**/*.wav
+teste-ruido/resultados/**/*.png
+
+# configuração local do editor e caches
+.claude/
+__pycache__/
+# resultados da bancada de ruído: citam os áudios de teste (que não vão para o repositório)
+teste-ruido/resultados/

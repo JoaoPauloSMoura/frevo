@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Ícone do Frevo: a sombrinha de frevo em branco, com as cores do frevo como uma aura no fundo.
+       Grade dos ícones do macOS: corpo de 824 × 824 no meio da tela de 1024, cantos de raio 185.
+       Gere o .icns com scripts/gerar-icone.sh. -->
+  <defs>
+    <clipPath id="corpo"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>
+    <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#17141F"/><stop offset="1" stop-color="#07060B"/>
+    </linearGradient>
+    <filter id="difuso" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="78"/></filter>
+    <linearGradient id="branco" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9E6F3"/>
+    </linearGradient>
+    <!-- os vãos entre os gomos são buracos de verdade: a aura aparece por eles -->
+    <mask id="gomos" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+      <rect width="1024" height="1024" fill="#fff"/>
+      <g fill="none" stroke="#000" stroke-width="15">
+        <path d="M512 286A242.7 234 0 0 0 269.3 520"/>
+        <path d="M512 286A92.7 234 0 0 0 419.3 520"/>
+        <path d="M512 286A92.7 234 0 0 1 604.7 520"/>
+        <path d="M512 286A242.7 234 0 0 1 754.7 520"/>
+      </g>
+    </mask>
+  </defs>
+  <g clip-path="url(#corpo)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#fundo)"/>
+    <g filter="url(#difuso)" opacity="0.9">
+      <circle cx="330" cy="520" r="185" fill="#FF5A4E"/>
+      <circle cx="465" cy="330" r="185" fill="#FFC93C"/>
+      <circle cx="650" cy="380" r="185" fill="#1FCB7F"/>
+      <circle cx="700" cy="580" r="195" fill="#3A7BFF"/>
+    </g>
+  </g>
+  <rect x="102" y="102" width="820" height="820" rx="183" fill="none" stroke="#fff" stroke-opacity="0.09" stroke-width="4"/>
+  <g transform="rotate(-14 512 560)" fill="url(#branco)">
+    <line x1="512" y1="520" x2="512" y2="800" stroke="#F4F2FA" stroke-width="20" stroke-linecap="round"/>
+    <path mask="url(#gomos)" d="M512 286A300 234 0 0 0 212 520Q240.7 509 269.3 520Q344.3 490 419.3 520Q512 483 604.7 520Q679.7 490 754.7 520Q783.4 509 812 520A300 234 0 0 0 512 286Z"/>
+    <!-- a ponteira: tampa onde os gomos se encontram, haste e bolinha -->
+    <ellipse cx="512" cy="293" rx="25" ry="12" fill="#FFFFFF"/>
+    <line x1="512" y1="292" x2="512" y2="258" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="512" cy="250" r="13" fill="#FFFFFF"/>
+  </g>
+</svg>

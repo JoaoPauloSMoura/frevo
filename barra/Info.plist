@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>pt-BR</string>
+	<key>CFBundleExecutable</key>
+	<string>Frevo</string>
+	<key>CFBundleIconFile</key>
+	<string>Frevo</string>
+	<key>CFBundleIdentifier</key>
+	<string>io.github.joaopaulosmoura.frevo</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Frevo</string>
+	<key>CFBundleDisplayName</key>
+	<string>Frevo</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>O Frevo usa o seu microfone para tirar o ruído da sua voz antes de entregá-la aos apps de chamada. Nada é gravado nem enviado para fora do Mac.</string>
+	<key>NSAudioCaptureUsageDescription</key>
+	<string>Para transcrever suas chamadas, o Frevo grava o som do app da reunião (a voz dos outros participantes). A gravação e a transcrição ficam só neste Mac.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>O Frevo usa o nome do evento da agenda para dar título à transcrição da chamada e sugerir os nomes dos convidados.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Para dar o nome certo à transcrição, o Frevo lê o endereço da aba do Google Meet e procura o evento da agenda com esse mesmo link. Ele não lê nada além dos endereços das abas.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2026 João Paulo S. Moura. Licença MIT.</string>
+</dict>
+</plist>
