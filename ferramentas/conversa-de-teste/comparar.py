@@ -61,6 +61,7 @@ def medir(gabarito, falas):
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")  # o terminal do Windows não é UTF-8 por padrão
     gabarito = json.load(open(sys.argv[1], encoding="utf-8"))
     resultados = {}
     for arg in sys.argv[2:]:
